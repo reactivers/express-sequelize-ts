@@ -1,0 +1,28 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:12
+    restart: always
+    container_name: reactivers-postgres
+    ports:
+      - "5500:5432"
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+      - postgres-data:/var/lib/postgresql/data
+    environment:
+      POSTGRES_PASSWORD: reactivers123
+  backend:
+    restart: always
+    depends_on:
+      - postgres
+    build:
+      context: ./
+    links:
+      - postgres
+    ports:
+      - "4500:8000"
+    container_name: reactivers-backend
+    env_file:
+      - .env.production
+volumes:
+  postgres-data:
