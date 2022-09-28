@@ -1,6 +1,6 @@
 {
   "name": "@reactivers/express-sequelize-ts",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Express, sequelize, typescript, unit test",
   "main": "src/index.ts",
   "scripts": {
@@ -17,6 +17,9 @@
   "repository": {
     "type": "git",
     "url": "https://github.com/reactivers/express-sequelize-ts"
+  },
+  "bin": {
+    "@reactivers/express-sequelize-ts": "./bin/index.js"
   },
   "keywords": [
     "express",
