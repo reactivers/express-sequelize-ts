@@ -1,3 +1,8 @@
+# Installation
+```
+npx @reactivers/express-sequelize-ts your-app-name
+```
+
 # Getting Started
 - Make sure the ports "5500" and "4500" are available on your end!
     - Postgres -> `5500`
@@ -7,11 +12,6 @@
 - Edit `init.sql` database names
 > Note!
 - Make sure database names are matched in `init.sql` and `.env` files!
-
-# Installation
-```
-yarn
-```
 
 # Running Tests
 ```
