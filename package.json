@@ -1,6 +1,6 @@
 {
   "name": "@reactivers/express-sequelize-ts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Express, sequelize, typescript, unit test",
   "main": "src/index.ts",
   "scripts": {
@@ -9,9 +9,26 @@
     "dev": "NODE_ENV=development npx nodemon ./src/index.ts",
     "test": "NODE_ENV=test mocha --require ts-node/register src/test/index.ts --timeout 10000 --exit"
   },
-  "keywords": [],
-  "author": "Murat Guney",
-  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/reactivers/express-sequelize-ts/issues",
+    "email": "support@reactivers.com"
+  },
+  "homepage": "https://github.com/reactivers/express-sequelize-ts",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/reactivers/express-sequelize-ts"
+  },
+  "keywords": [
+    "express",
+    "sequelize",
+    "typescript",
+    "docker",
+    "boilerplate",
+    "create node app"
+  ],
+  "author": "Reactivers",
+  "license": "MIT",
+  "private": false,
   "dependencies": {
     "@types/node": "^18.6.3",
     "@types/jsonwebtoken": "^8.5.9",
