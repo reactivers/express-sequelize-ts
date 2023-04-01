@@ -6,19 +6,18 @@ import "./sequelize";
 import { initTables } from "./tables";
 import { isTest } from "./utils/functions";
 
-
-const PORT = isTest() ? 8001 : 8000;
+const PORT = isTest() ? 8010 : 8000;
 const app = express();
 
 app.use(morgan("tiny"));
-app.use(cors())
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const initServer = async () => {
-    await initTables();
-    await initRoutes(app)
-    return app.listen(PORT)
-}
+  await initTables();
+  await initRoutes(app);
+  return app.listen(PORT);
+};
 
-export default initServer
+export default initServer;

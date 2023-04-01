@@ -1,32 +1,32 @@
 import type { Express } from "express";
 
 export enum NODE_ENV_ENUM {
-    DEVELOPMENT = "development",
-    PRODUCTION = "production",
-    TEST = "test"
+  DEVELOPMENT = "development",
+  PRODUCTION = "production",
+  TEST = "test",
 }
 
 export interface IAppRoute {
-    public: (app: Express) => void;
-    private: (app: Express) => void;
+  public: (app: Express) => void;
+  private: (app: Express) => void;
 }
 
 export interface IUser {
-    username: string;
-    firstname: string;
-    lastname: string;
-    password?: string
+  username: string;
+  firstname: string;
+  lastname: string;
+  password?: string;
 }
 
 export interface IJWTToken {
-    user: IUser
+  user: IUser;
 }
 
 export interface ISignUpInput extends IUser {
-    password: string;
+  password: string;
 }
 
 export interface ILoginInput extends Omit<IUser, "firstname" | "lastname"> {
-    username: string;
-    password: string;
+  username: string;
+  password: string;
 }

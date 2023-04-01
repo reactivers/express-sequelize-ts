@@ -1,13 +1,17 @@
 {
   "name": "@reactivers/express-sequelize-ts",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Express, sequelize, typescript, unit test",
   "main": "src/index.ts",
   "scripts": {
-    "build": "npx tsc",
+    "rimraf": "npx rimraf",
+    "build": "npm run rimraf build && npx tsc",
     "start": "NODE_ENV=production node ./dist/server",
     "dev": "NODE_ENV=development npx nodemon ./src/index.ts",
-    "test": "NODE_ENV=test mocha --require ts-node/register src/test/index.ts --timeout 10000 --exit"
+    "test": "NODE_ENV=test mocha --require ts-node/register src/test/index.ts --timeout 10000 --exit",
+    "lint": "npx eslint src --ext .ts --fix",
+    "format": "npx prettier --write \"src/**/*.{ts,tsx}\"",
+    "prepare": "husky install"
   },
   "bugs": {
     "url": "https://github.com/reactivers/express-sequelize-ts/issues",
@@ -57,6 +61,12 @@
     "ts-node": "^10.8.1"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.5.0",
+    "@commitlint/config-conventional": "^17.4.4",
+    "@typescript-eslint/eslint-plugin": "^5.57.0",
+    "@typescript-eslint/parser": "^5.57.0",
+    "eslint": "8.18.0",
+    "husky": "^8.0.3",
     "nodemon": "^2.0.16",
     "typescript": "^4.7.3"
   }
