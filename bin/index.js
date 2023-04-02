@@ -31,7 +31,7 @@ const createProjectFolder = (projectPath, projectName) => {
   } catch (err) {
     if (err.code === "EEXIST") {
       console.log(
-        `The file ${projectName} already exist in the current directory, please give it another name.`
+        `The file ${projectName} already exist in the current directory, please give it another name.`,
       );
     } else {
       console.log(error);
@@ -53,6 +53,7 @@ const installDependencies = () => {
 
 const removeExtraFiles = async (projectName, projectPath) => {
   console.log("Removing useless files");
+  fs.rmSync(path.join(projectPath, ".git"), { recursive: true });
   fs.rmSync(path.join(projectPath, "bin"), { recursive: true });
   let packageJSONData = await readFile(path.join(projectPath, "package.json"));
   const packageJSON = JSON.parse(packageJSONData);
